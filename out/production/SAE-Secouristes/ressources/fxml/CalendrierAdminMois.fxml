@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.time.LocalDate?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+
+<StackPane prefHeight="852.0" prefWidth="393.0" styleClass="rounded-app" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CalendrierMoisAdminController">
+    <clip>
+        <Rectangle arcHeight="50" arcWidth="50" height="852" width="393" />
+    </clip>
+
+    <!-- CONTENEUR PRINCIPAL -->
+    <BorderPane fx:id="mainBorderPane" prefHeight="852.0" prefWidth="393.0">
+        <top>
+            <VBox prefWidth="393.0" BorderPane.alignment="CENTER">
+                <children>
+                    <HBox alignment="CENTER" prefHeight="44.0" prefWidth="393.0" spacing="3.0" styleClass="top-container-tableau">
+                        <children>
+                            <Label fx:id="timeLabel" styleClass="app-time-tableau" text="00:00" />
+                            <Region HBox.hgrow="ALWAYS" />
+                            <ImageView fitHeight="17" fitWidth="17" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../img/signal_noir.png" />
+                                </image>
+                            </ImageView>
+                            <ImageView fitHeight="20" fitWidth="20" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../img/wifi_noir.png" />
+                                </image>
+                            </ImageView>
+                            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../img/batterie_noir.png" />
+                                </image>
+                            </ImageView>
+                        </children>
+                    </HBox>
+                </children>
+            </VBox>
+        </top>
+
+        <center>
+            <VBox alignment="TOP_CENTER" prefHeight="869.0" prefWidth="393.0" spacing="20.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+                <children>
+                    <VBox alignment="CENTER" prefHeight="300.0" prefWidth="393.0" spacing="15.0" styleClass="event-list">
+                        <children>
+                            <HBox alignment="CENTER" prefHeight="29.0" prefWidth="394.0" spacing="10.0">
+                                <children>
+                                    <HBox alignment="CENTER" prefHeight="29.0" prefWidth="394.0" spacing="10.0">
+                                        <children>
+                                            <VBox alignment="CENTER" onMouseClicked="#handleRetourSemaine" styleClass="clickable-zone">
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../img/superieur.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </VBox>
+                                            <Label style="-fx-text-fill: black; -fx-font-size: 24;" text="Mois" />
+                                        </children>
+                                    </HBox>
+                                </children>
+                            </HBox>
+                            <ScrollPane fx:id="scrollPaneMois" fitToHeight="true" hbarPolicy="NEVER" pannable="true" prefHeight="90.0" prefWidth="373.0" style="-fx-background-color: transparent; -fx-padding: 0; -fx-background-insets: 0; -fx-background-radius: 0; -fx-background: transparent;" vbarPolicy="NEVER">
+                                <content>
+                                    <HBox fx:id="moisSelector" alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: rgba(171, 171, 171, 0.21); -fx-background-radius: 20;">
+                                        <padding>
+                                            <Insets bottom="10" left="20" right="20" top="10" />
+                                        </padding>
+                                    </HBox>
+                                </content>
+                            </ScrollPane>
+                            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="381.0" style="-fx-background-color: rgba(171, 171, 171, 0.21); -fx-background-radius: 20;">
+                                <children>
+                                    <HBox alignment="CENTER" spacing="10.0">
+                                        <children>
+                                            <Label fx:id="labelMoisActuel" style="-fx-text-fill: #E60023; -fx-font-size: 24;" text="Juin" />
+                                        </children>
+                                    </HBox>
+                                </children>
+                                <padding>
+                                    <Insets bottom="30.0" left="40.0" right="40.0" top="30.0" />
+                                </padding>
+                            </HBox>
+                        </children>
+                    </VBox>
+                    <VBox alignment="CENTER" prefWidth="393.0">
+                        <children>
+                            <VBox alignment="CENTER" maxWidth="357.0" prefHeight="354.0" prefWidth="357.0" spacing="10" style="-fx-background-color: #F6F6F6; -fx-background-radius: 30;">
+                                <padding>
+                                    <Insets bottom="20" left="20" right="20" top="20" />
+                                </padding>
+                                <HBox alignment="CENTER" prefHeight="40.0" spacing="35.0" style="-fx-border-color: red; -fx-border-width: 0 0 2 0;">
+                                    <children>
+                                        <Label style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: black;" text="L" />
+                                        <Label style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: black;" text="M" />
+                                        <Label style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: black;" text="M" />
+                                        <Label style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: black;" text="J" />
+                                        <Label style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: black;" text="V" />
+                                        <Label style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: black;" text="S" />
+                                        <Label style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: black;" text="D" />
+                                    </children>
+                                </HBox>
+                                <GridPane fx:id="gridMois" alignment="CENTER" hgap="29" vgap="10">
+                                    <padding>
+                                        <Insets bottom="10" left="10" right="10" top="10" />
+                                    </padding>
+                                </GridPane>
+                            </VBox>
+                            <VBox alignment="TOP_CENTER" prefHeight="210.0" prefWidth="393.0">
+                                <VBox.margin>
+                                    <Insets top="20" />
+                                </VBox.margin>
+                                <children>
+                                    <Button alignment="CENTER" onAction="#showPopup" prefHeight="45" prefWidth="300" styleClass="create-button" text="Créer un DPS" />
+                                </children>
+                            </VBox>
+                        </children>
+                    </VBox>
+                </children>
+            </VBox>
+        </center>
+    </BorderPane>
+
+    <!-- NAVIGATION BAR FLOTANTE -->
+    <HBox fx:id="navBar" alignment="CENTER" maxHeight="70" maxWidth="346.0" spacing="40.0" style="-fx-background-color: #FFEDED; -fx-background-radius: 50; -fx-border-radius: 50; -fx-padding: 10; " StackPane.alignment="BOTTOM_CENTER">
+        <children>
+            <VBox alignment="CENTER" onMouseClicked="#handleAccueil" styleClass="clickable-zone">
+                <ImageView fitHeight="36.0" fitWidth="45.0">
+                    <image>
+                        <Image url="@../img/Accueil_noir.png" />
+                    </image>
+                </ImageView>
+            </VBox>
+            <VBox alignment="CENTER">
+                <ImageView fitHeight="36.0" fitWidth="45.0">
+                    <image>
+                        <Image url="@../img/Planning_rouge.png" />
+                    </image>
+                </ImageView>
+            </VBox>
+            <VBox alignment="CENTER" onMouseClicked="#handleAlertesAdmin" styleClass="clickable-zone">
+                <ImageView fitHeight="36.0" fitWidth="45.0">
+                    <image>
+                        <Image url="@../img/Alertes_noir.png" />
+                    </image>
+                </ImageView>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="213.0" layoutY="20.0" onMouseClicked="#handleEffectif" styleClass="clickable-zone">
+                <children>
+                    <ImageView fitHeight="36.0" fitWidth="45.0">
+                        <image>
+                            <Image url="@../img/effectif.png" />
+                        </image>
+                    </ImageView>
+                </children>
+            </VBox>
+        </children>
+        <StackPane.margin>
+            <Insets bottom="40.0" />
+        </StackPane.margin>
+    </HBox>
+
+    <Rectangle fx:id="overlay" fill="rgba(0,0,0,0.4)" height="852" visible="false" width="394.0" />
+
+    <VBox fx:id="popupPane" alignment="CENTER" maxHeight="760.0" maxWidth="394.0" prefHeight="760.0" prefWidth="394.0" spacing="10" style="-fx-background-color: white;              -fx-background-radius: 10;              -fx-border-color: #333333;              -fx-border-radius: 10;              -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 10, 0, 0, 5);" visible="false" StackPane.alignment="BOTTOM_CENTER" VBox.vgrow="NEVER">
+        <children>
+            <GridPane prefHeight="760.0" prefWidth="393.0">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints maxHeight="62.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="201.0" minHeight="10.0" prefHeight="158.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="251.0" minHeight="0.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="377.0" minHeight="10.0" prefHeight="145.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="377.0" minHeight="10.0" prefHeight="94.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="418.0" minHeight="10.0" prefHeight="175.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="122.0" minHeight="10.0" prefHeight="102.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+                <children>
+                    <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="392.0" style="-fx-border-color: transparent transparent rgba(136, 136, 136, 0.21) transparent; -fx-border-width: 0 0 2 0;">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="344.0" minWidth="10.0" prefWidth="342.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="190.0" minWidth="10.0" prefWidth="50.0" />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        </rowConstraints>
+                        <children>
+                            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                <children>
+                                    <Label prefHeight="35.0" prefWidth="322.0" style="-fx-text-fill: #E60023; -fx-font-size: 24;" text="Créer un DPS" />
+                                </children>
+                            </VBox>
+                            <VBox alignment="CENTER" onMouseClicked="#hidePopup" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                                <children>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../img/croix.png" />
+                                        </image>
+                                    </ImageView>
+                                </children>
+                            </VBox>
+                        </children>
+                    </GridPane>
+                    <HBox prefHeight="61.0" prefWidth="392.0" GridPane.rowIndex="2">
+                        <children>
+                            <Label fx:id="titrePopupLabel" style="-fx-text-fill: black; -fx-font-size: 16;" text="Sélectionner des compétences" wrapText="true" />
+                        </children>
+                        <padding>
+                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                        </padding>
+                    </HBox>
+                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
+                        <children>
+                            <Button onAction="#handleValiderCompetences" style="-fx-max-height: 40; -fx-max-width: 230;" styleClass="create-button" text="Valider" textAlignment="CENTER" />
+                        </children>
+                    </HBox>
+                    <GridPane alignment="CENTER" style="-fx-border-color: transparent transparent rgba(136, 136, 136, 0.21) transparent; -fx-border-width: 0 0 2 0;" GridPane.rowIndex="3">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        </rowConstraints>
+                        <children>
+                            <HBox alignment="CENTER" spacing="10" styleClass="checkbox-container">
+                                <children>
+                                    <CheckBox fx:id="customCheckbox" styleClass="notification-checkbox">
+                                        <graphic>
+                                            <ImageView fx:id="checkboxImage" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                <image>
+                                                    <Image url="@../img/case_coche.png" />
+                                                </image>
+                                            </ImageView>
+                                        </graphic>
+                                    </CheckBox>
+                                    <Label styleClass="checkbox-label" text="CO" wrapText="true" HBox.hgrow="ALWAYS" />
+                                </children>
+                            </HBox>
+                            <HBox alignment="CENTER" spacing="10" styleClass="checkbox-container" GridPane.columnIndex="1">
+                                <children>
+                                    <CheckBox fx:id="customCheckbox1" styleClass="notification-checkbox">
+                                        <graphic>
+                                            <ImageView fx:id="checkboxImage1" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                <image>
+                                                    <Image url="@../img/case_coche.png" />
+                                                </image>
+                                            </ImageView>
+                                        </graphic>
+                                    </CheckBox>
+                                    <Label styleClass="checkbox-label" text="CP" wrapText="true" HBox.hgrow="ALWAYS" />
+                                </children>
+                            </HBox>
+                            <HBox alignment="CENTER" spacing="10" styleClass="checkbox-container" GridPane.columnIndex="2">
+                                <children>
+                                    <CheckBox fx:id="customCheckbox2" styleClass="notification-checkbox">
+                                        <graphic>
+                                            <ImageView fx:id="checkboxImage2" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                <image>
+                                                    <Image url="@../img/case_coche.png" />
+                                                </image>
+                                            </ImageView>
+                                        </graphic>
+                                    </CheckBox>
+                                    <Label styleClass="checkbox-label" text="CE" wrapText="true" HBox.hgrow="ALWAYS" />
+                                </children>
+                            </HBox>
+                            <HBox alignment="CENTER" spacing="10" styleClass="checkbox-container" GridPane.rowIndex="1">
+                                <children>
+                                    <CheckBox fx:id="customCheckbox3" styleClass="notification-checkbox">
+                                        <graphic>
+                                            <ImageView fx:id="checkboxImage3" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                <image>
+                                                    <Image url="@../img/case_coche.png" />
+                                                </image>
+                                            </ImageView>
+                                        </graphic>
+                                    </CheckBox>
+                                    <Label styleClass="checkbox-label" text="PBC" wrapText="true" HBox.hgrow="ALWAYS" />
+                                </children>
+                            </HBox>
+                            <HBox alignment="CENTER" spacing="10" styleClass="checkbox-container" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                <children>
+                                    <CheckBox fx:id="customCheckbox4" styleClass="notification-checkbox">
+                                        <graphic>
+                                            <ImageView fx:id="checkboxImage4" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                <image>
+                                                    <Image url="@../img/case_coche.png" />
+                                                </image>
+                                            </ImageView>
+                                        </graphic>
+                                    </CheckBox>
+                                    <Label styleClass="checkbox-label" text="PBF" wrapText="true" HBox.hgrow="ALWAYS" />
+                                </children>
+                            </HBox>
+                            <HBox alignment="CENTER" spacing="10" styleClass="checkbox-container" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                <children>
+                                    <CheckBox fx:id="customCheckbox5" styleClass="notification-checkbox">
+                                        <graphic>
+                                            <ImageView fx:id="checkboxImage5" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                <image>
+                                                    <Image url="@../img/case_coche.png" />
+                                                </image>
+                                            </ImageView>
+                                        </graphic>
+                                    </CheckBox>
+                                    <Label styleClass="checkbox-label" text="PSE1" wrapText="true" HBox.hgrow="ALWAYS" />
+                                </children>
+                            </HBox>
+                            <HBox alignment="CENTER" spacing="10" styleClass="checkbox-container" GridPane.rowIndex="2">
+                                <children>
+                                    <CheckBox fx:id="customCheckbox6" styleClass="notification-checkbox">
+                                        <graphic>
+                                            <ImageView fx:id="checkboxImage6" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                <image>
+                                                    <Image url="@../img/case_coche.png" />
+                                                </image>
+                                            </ImageView>
+                                        </graphic>
+                                    </CheckBox>
+                                    <Label styleClass="checkbox-label" text="PSE2" wrapText="true" HBox.hgrow="ALWAYS" />
+                                </children>
+                            </HBox>
+                            <HBox alignment="CENTER" spacing="10" styleClass="checkbox-container" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                <children>
+                                    <CheckBox fx:id="customCheckbox7" styleClass="notification-checkbox">
+                                        <graphic>
+                                            <ImageView fx:id="checkboxImage7" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                <image>
+                                                    <Image url="@../img/case_coche.png" />
+                                                </image>
+                                            </ImageView>
+                                        </graphic>
+                                    </CheckBox>
+                                    <Label styleClass="checkbox-label" text="SSA" wrapText="true" HBox.hgrow="ALWAYS" />
+                                </children>
+                            </HBox>
+                            <HBox alignment="CENTER" spacing="10" styleClass="checkbox-container" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                <children>
+                                    <CheckBox fx:id="customCheckbox8" styleClass="notification-checkbox">
+                                        <graphic>
+                                            <ImageView fx:id="checkboxImage8" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                <image>
+                                                    <Image url="@../img/case_coche.png" />
+                                                </image>
+                                            </ImageView>
+                                        </graphic>
+                                    </CheckBox>
+                                    <Label styleClass="checkbox-label" text="VPSP" wrapText="true" HBox.hgrow="ALWAYS" />
+                                </children>
+                            </HBox>
+                        </children>
+                    </GridPane>
+                    <GridPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="140.0" style="-fx-border-color: transparent transparent rgba(136, 136, 136, 0.21) transparent; -fx-border-width: 0 0 2 0;" GridPane.rowIndex="1">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints maxHeight="85.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="59.0" minHeight="0.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="59.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                     <RowConstraints maxHeight="59.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                        </rowConstraints>
+                        <children>
+                            <Label fx:id="titrePopupLabel1" style="-fx-text-fill: black; -fx-font-size: 16;" text="Début" wrapText="true">
+                                <GridPane.margin>
+                                    <Insets left="10.0" />
+                                </GridPane.margin>
+                            </Label>
+                            <Label fx:id="titrePopupLabel11" layoutX="10.0" layoutY="9.0" style="-fx-text-fill: black; -fx-font-size: 16;" text="Fin" wrapText="true" GridPane.rowIndex="1">
+                                <GridPane.margin>
+                                    <Insets left="10.0" />
+                                </GridPane.margin>
+                            </Label>
+                            <DatePicker fx:id="datePickerStart" style="-fx-background-color: rgba(171, 171, 171, 0.21); -fx-border-color: rgba(171, 171, 171, 0.21);" GridPane.columnIndex="1">
+                                <value>
+                                    <LocalDate fx:factory="now" />
+                                </value>
+                            </DatePicker>
+                            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+                                <children>
+                                    <ComboBox fx:id="hourComboBoxStart" prefWidth="100.0" style="-fx-background-color: rgba(171, 171, 171, 0.21); -fx-border-color: rgba(171, 171, 171, 0.21);">
+                                        <items>
+                                            <FXCollections fx:factory="observableArrayList">
+                                                <String fx:value="7:00h" />
+                                                <String fx:value="8:00h" />
+                                                <String fx:value="9:00h" />
+                                                <String fx:value="10:00h" />
+                                                <String fx:value="11:00h" />
+                                                <String fx:value="12:00h" />
+                                                <String fx:value="13:00h" />
+                                                <String fx:value="14:00h" />
+                                                <String fx:value="15:00h" />
+                                                <String fx:value="16:00h" />
+                                                <String fx:value="17:00h" />
+                                                <String fx:value="18:00h" />
+                                                <String fx:value="19:00h" />
+                                                <String fx:value="20:00h" />
+                                                <String fx:value="21:00h" />
+                                                <String fx:value="22:00h" />
+                                            </FXCollections>
+                                        </items>
+                                    </ComboBox>
+                                </children>
+                            </VBox>
+                            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                <children>
+                                    <ComboBox fx:id="hourComboBoxEnd" prefWidth="100.0" style="-fx-background-color: rgba(171, 171, 171, 0.21); -fx-border-color: rgba(171, 171, 171, 0.21);">
+                                        <items>
+                                            <FXCollections fx:factory="observableArrayList">
+                                                <String fx:value="7:00h" />
+                                                <String fx:value="8:00h" />
+                                                <String fx:value="9:00h" />
+                                                <String fx:value="10:00h" />
+                                                <String fx:value="11:00h" />
+                                                <String fx:value="12:00h" />
+                                                <String fx:value="13:00h" />
+                                                <String fx:value="14:00h" />
+                                                <String fx:value="15:00h" />
+                                                <String fx:value="16:00h" />
+                                                <String fx:value="17:00h" />
+                                                <String fx:value="18:00h" />
+                                                <String fx:value="19:00h" />
+                                                <String fx:value="20:00h" />
+                                                <String fx:value="21:00h" />
+                                                <String fx:value="22:00h" />
+                                            </FXCollections>
+                                        </items>
+                                    </ComboBox>
+                                </children>
+                            </VBox>
+                            <Label fx:id="titrePopupLabel111" layoutX="20.0" layoutY="42.0" style="-fx-text-fill: black; -fx-font-size: 16;" text="Couleur" wrapText="true" GridPane.rowIndex="2">
+                                <GridPane.margin>
+                                    <Insets left="10.0" />
+                                </GridPane.margin>
+                            </Label>
+                            <ComboBox fx:id="hourComboBoxEnd1" prefWidth="100.0" style="-fx-background-color: rgba(171, 171, 171, 0.21); -fx-border-color: rgba(171, 171, 171, 0.21);" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Rouge" />
+                                        <String fx:value="Orange" />
+                                        <String fx:value="Jaune" />
+                                        <String fx:value="Vert" />
+                                        <String fx:value="Bleu" />
+                                        <String fx:value="Violet" />
+                                        <String fx:value="Rose" />
+                                        <String fx:value="Gris" />
+                                        <String fx:value="Noir" />
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                     <Label fx:id="message" layoutX="20.0" layoutY="52.0" style="-fx-text-fill: black; -fx-font-size: 16;" text="" wrapText="true" GridPane.rowIndex="3">
+                        <GridPane.margin>
+                           <Insets left="10.0" />
+                        </GridPane.margin>
+                     </Label>
+                     <TextField style="-fx-background-color: rgba(171, 171, 171, 0.21); -fx-border-color: rgba(171, 171, 171, 0.21);" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <GridPane.margin>
+                           <Insets />
+                        </GridPane.margin>
+                     </TextField>
+                        </children>
+                  <padding>
+                     <Insets bottom="10.0" />
+                  </padding>
+                    </GridPane>
+                    <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="4">
+                        <children>
+                            <Label fx:id="titrePopupLabel2" style="-fx-text-fill: black; -fx-font-size: 20;" text="Les secouristes" wrapText="true" />
+                            <Label fx:id="titrePopupLabel21" layoutX="10.0" layoutY="10.0" style="-fx-text-fill: black; -fx-font-size: 16;" text="Note : les secouristes non disponibles sur cet interval de date ne sont pas affichés" textAlignment="CENTER" wrapText="true" />
+                        </children>
+                    </VBox>
+                    <ScrollPane fitToWidth="true" prefHeight="196.0" prefWidth="393.0" style="-fx-background: white;" GridPane.rowIndex="5">
+                        <content>
+                            <VBox fx:id="eventList" alignment="TOP_CENTER" spacing="5" styleClass="event-list" />
+                        </content>
+                    </ScrollPane>
+                </children>
+            </GridPane>
+        </children>
+    </VBox>
+</StackPane>

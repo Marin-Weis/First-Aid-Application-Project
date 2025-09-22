@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+
+<!-- Utilisation de BorderPane pour l'application car simple d'utilisation -->
+<?import javafx.scene.layout.StackPane?>
+<BorderPane prefHeight="852.0" prefWidth="393.0" styleClass="rounded-app" stylesheets="@/ressources/css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="controller.AccueilController" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <!-- Utilisation AnchorPane pour placer les éléments avec précisions -->
+      <AnchorPane prefHeight="498.0" prefWidth="394.0" BorderPane.alignment="CENTER" styleClass="anchorPane-connexion">
+
+         <!-- Utilisation de children pour placer plus facilement les éléments car le conteneur n'a pas de structure claire -->
+         <children>
+
+            <!-- Placement de la petite barre d'infos en-haut de l'application avec HBox qui place les éléments à la suite -->
+            <HBox alignment="CENTER" prefHeight="44.0" prefWidth="394.0" spacing="3" styleClass="top-container">
+
+               <!-- Contenu de HBox -->
+               <children>
+                  <Label fx:id="timeLabel" styleClass="app-time" text="00:00" /> <!-- l'heure -->
+                  <Region HBox.hgrow="ALWAYS" /> <!-- Espace flexible -->
+
+                  <!-- les icônes de statut de l'application-->
+                  <ImageView fitHeight="17" fitWidth="17" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/signal.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="20" fitWidth="20" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/wifi.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/batterie_pleine.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+
+            <!-- La courbe de l'application -->
+            <Pane prefHeight="100.0" prefWidth="394"
+                  styleClass="curve-shape"
+                  AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0"/>
+
+            <!-- Le titre et le logo centrer dans un stackPane -->
+            <!-- Un StackPane en JavaFX est un conteneur qui empile ses enfants les uns sur les autres, centrés par défaut.-->
+            <StackPane prefWidth="394.0" prefHeight="498.0" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <VBox alignment="CENTER" spacing="10">
+                  <Label text="Les" style="-fx-text-fill: white; -fx-font-size: 32px;"/>
+                  <Label text="AmbuLympics" style="-fx-text-fill: white; -fx-font-size: 32px; -fx-font-weight: bold;"/>
+                  <Region prefHeight="20"/>
+                  <ImageView fitWidth="150.0" fitHeight="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/logo.png" />
+                     </image>
+                  </ImageView>
+               </VBox>
+            </StackPane>
+         </children>
+
+      </AnchorPane>
+   </top>
+
+   <center>
+      <VBox alignment="CENTER" spacing="50">
+         <Button text="S’inscrire" styleClass="create-button" onAction="#handleInscription"/>
+         <Button text="Se connecter" styleClass="create-button" onAction="#handleConnexion"/>
+      </VBox>
+   </center>
+
+</BorderPane>

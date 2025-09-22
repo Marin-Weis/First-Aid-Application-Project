@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- Utilisation de BorderPane pour l'application car simple d'utilisation -->
+
+<BorderPane prefHeight="852.0" prefWidth="393.0" style="-fx-background-color: #E60023;" styleClass="rounded-app" stylesheets="@/ressources/css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AccueilController">
+   <top>
+      <VBox alignment="BOTTOM_CENTER" prefHeight="300.0" prefWidth="394.0" BorderPane.alignment="BOTTOM_CENTER">
+         <children>
+            <Label style="-fx-text-fill: white; -fx-font-size: 50; -fx-font-weight: bold;" text="Les&#10; AmbuLympics" textAlignment="CENTER">
+               <padding>
+                  <Insets bottom="50.0" />
+               </padding></Label>
+         </children>
+      </VBox>
+   </top>
+   <bottom>
+      <VBox alignment="TOP_CENTER" prefHeight="526.0" prefWidth="394.0" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/logo.png" />
+               </image>
+            </ImageView>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/chargement.gif" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="182.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/chargement.gif" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="207.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/chargement.gif" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="232.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/chargement.gif" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="107.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/chargement.gif" />
+                     </image>
+                  </ImageView>
+               </children>
+               <VBox.margin>
+                  <Insets top="150.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+
+<StackPane prefHeight="852.0" prefWidth="393.0" styleClass="rounded-app" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CalendrierSecouristeMoisAdminController">
+
+    <clip>
+        <Rectangle arcHeight="50" arcWidth="50" height="852" width="393" />
+    </clip>
+
+    <BorderPane fx:id="mainBorderPane" prefHeight="852.0" prefWidth="393.0">
+        <top>
+            <VBox prefWidth="393.0" BorderPane.alignment="CENTER">
+                <children>
+                    <HBox alignment="CENTER" prefHeight="44.0" spacing="3.0" styleClass="top-container-tableau">
+                        <children>
+                            <Label fx:id="timeLabel" styleClass="app-time-tableau" text="00:00" />
+                            <Region HBox.hgrow="ALWAYS" />
+                            <ImageView fitHeight="17" fitWidth="17" preserveRatio="true">
+                                <image><Image url="@../img/signal_noir.png" /></image>
+                            </ImageView>
+                            <ImageView fitHeight="20" fitWidth="20" preserveRatio="true">
+                                <image><Image url="@../img/wifi_noir.png" /></image>
+                            </ImageView>
+                            <ImageView fitHeight="24.0" fitWidth="24.0" preserveRatio="true">
+                                <image><Image url="@../img/batterie_noir.png" /></image>
+                            </ImageView>
+                        </children>
+                    </HBox>
+                </children>
+            </VBox>
+        </top>
+
+        <center>
+            <VBox alignment="TOP_CENTER" spacing="20.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+                <children>
+                    <VBox alignment="CENTER" spacing="15.0" styleClass="event-list">
+                        <children>
+                            <HBox alignment="CENTER" spacing="10.0">
+                                <children>
+                                    <VBox alignment="CENTER" onMouseClicked="#handleRetourSemaine" styleClass="clickable-zone">
+                                        <children>
+                                            <ImageView fitHeight="25.0" fitWidth="25.0" nodeOrientation="RIGHT_TO_LEFT" preserveRatio="true">
+                                                <image><Image url="@../img/superieur.png" /></image>
+                                            </ImageView>
+                                        </children>
+                                    </VBox>
+                                    <Label style="-fx-text-fill: black; -fx-font-size: 24;" text="Mois" />
+                                </children>
+                            </HBox>
+                            <ScrollPane fx:id="scrollPaneMois" fitToHeight="true" fitToWidth="false" hbarPolicy="NEVER" pannable="true" prefHeight="156.0" prefWidth="393.0" style="-fx-background-color: transparent;" vbarPolicy="NEVER">
+                                <content>
+                                    <HBox fx:id="moisSelector" alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: rgba(171, 171, 171, 0.21); -fx-background-radius: 20;">
+                                        <padding>
+                                            <Insets bottom="10" left="20" right="20" top="10" />
+                                        </padding>
+                                    </HBox>
+                                </content>
+                            </ScrollPane>
+
+                            <HBox alignment="CENTER" prefHeight="86.0" prefWidth="330.0" style="-fx-background-color: rgba(171, 171, 171, 0.21); -fx-background-radius: 20;">
+                                <children>
+                                    <HBox alignment="CENTER" spacing="10.0">
+                                        <children>
+                                 <VBox alignment="CENTER" prefHeight="58.0" prefWidth="328.0">
+                                    <children>
+                                                  <Label fx:id="labelNomSecouriste" prefHeight="29.0" prefWidth="223.0" style="-fx-text-fill: #E60023; -fx-font-size: 24;" text="Calendrier de Marin " />
+                                        <Label fx:id="labelMoisActuel" prefHeight="29.0" prefWidth="405.0" style="-fx-font-size: 24; -fx-text-fill: black;" text="Avril" />
+                                    </children>
+                                 </VBox>
+                                        </children>
+                                    </HBox>
+                                </children>
+                                <padding>
+                                    <Insets bottom="30.0" left="40.0" right="40.0" top="30.0" />
+                                </padding>
+                            </HBox>
+                        </children>
+                    </VBox>
+                    <VBox alignment="CENTER">
+                        <children>
+                            <VBox alignment="CENTER" maxWidth="357.0" prefHeight="354.0" prefWidth="357.0" spacing="10" style="-fx-background-color: #F6F6F6; -fx-background-radius: 30;">
+                                <padding>
+                                    <Insets bottom="20" left="20" right="20" top="20" />
+                                </padding>
+                                <HBox alignment="CENTER" spacing="35.0" style="-fx-border-color: red; -fx-border-width: 0 0 2 0;">
+                                    <children>
+                                        <Label style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: black;" text="L" />
+                                        <Label style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: black;" text="M" />
+                                        <Label style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: black;" text="M" />
+                                        <Label style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: black;" text="J" />
+                                        <Label style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: black;" text="V" />
+                                        <Label style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: black;" text="S" />
+                                        <Label style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: black;" text="D" />
+                                    </children>
+                                </HBox>
+                                <GridPane fx:id="gridMois" alignment="CENTER" hgap="28" vgap="10">
+                                    <padding>
+                                        <Insets bottom="10" left="10" right="10" top="10" />
+                                    </padding>
+                                </GridPane>
+                            </VBox>
+                            <VBox alignment="TOP_CENTER" prefHeight="210.0" prefWidth="393.0">
+                                <VBox.margin>
+                                    <Insets top="20" />
+                                </VBox.margin>
+                                <children>
+                                    <Button alignment="CENTER" prefHeight="45" prefWidth="300" styleClass="create-button" text="Créer un DPS" />
+                                </children>
+                            </VBox>
+                        </children>
+                    </VBox>
+                </children>
+            </VBox>
+        </center>
+    </BorderPane>
+
+    <HBox fx:id="navBar" alignment="CENTER" maxHeight="70" maxWidth="346.0" spacing="40.0" style="-fx-background-color: #FFEDED; -fx-background-radius: 50; -fx-border-radius: 50; -fx-padding: 10;" StackPane.alignment="BOTTOM_CENTER">
+        <children>
+            <VBox alignment="CENTER" onMouseClicked="#handleAccueil" styleClass="clickable-zone">
+                <ImageView fitHeight="36.0" fitWidth="45.0">
+                    <image><Image url="@../img/Accueil_noir.png" /></image>
+                </ImageView>
+            </VBox>
+            <VBox alignment="CENTER">
+                <ImageView fitHeight="36.0" fitWidth="45.0">
+                    <image><Image url="@../img/Planning_rouge.png" /></image>
+                </ImageView>
+            </VBox>
+            <VBox alignment="CENTER" onMouseClicked="#handleAlertesAdmin" styleClass="clickable-zone">
+                <ImageView fitHeight="36.0" fitWidth="45.0">
+                    <image><Image url="@../img/Alertes_noir.png" /></image>
+                </ImageView>
+            </VBox>
+            <VBox alignment="CENTER" onMouseClicked="#handleEffectif" styleClass="clickable-zone">
+                <ImageView fitHeight="36.0" fitWidth="45.0">
+                    <image><Image url="@../img/effectif.png" /></image>
+                </ImageView>
+            </VBox>
+        </children>
+        <StackPane.margin>
+            <Insets bottom="40.0" />
+        </StackPane.margin>
+    </HBox>
+</StackPane>

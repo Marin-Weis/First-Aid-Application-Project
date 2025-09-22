@@ -1,0 +1,371 @@
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("../../ressources/fonts/SF-Pro-Display-Black.otf");
+}
+@font-face {
+    font-family: "SF Pro Display Bold";
+    src: url("../../ressources/fonts/SF-Pro-Display-Bold.otf");
+}
+
+/* Désactive le fond de la scène */
+.root {
+    -fx-background-color: transparent;
+    -fx-font-family: "SF Pro Display";
+}
+
+.label, .button, .text {
+    -fx-text-fill: white; /* Texte en blanc */
+}
+
+/* Style du BorderPane arrondi */
+.rounded-app {
+    -fx-background-color: #ffffff; /* Couleur de fond */
+    -fx-background-radius: 25;   /* Rayon des coins */
+    -fx-border-radius: 25;       /* Pour harmonisation */
+}
+
+.top-container {
+    -fx-background-color: #E60023; /* Couleur de fond */
+    -fx-background-radius: 25px 25px 0 0;
+    -fx-border-radius: 25px 25px 0 0;
+    -fx-padding: 0 20 0 20 ;
+}
+
+.app-time {
+    -fx-font-size: 16;
+}
+
+.anchorPane-connexion {
+    -fx-background-color: #E60023;
+    -fx-background-radius: 25px 25px 0 0;
+    -fx-border-radius: 25px 25px 0 0;
+}
+
+.anchorPane-connexion-profil {
+    -fx-background-color: #E60023;
+    -fx-padding: 0;
+    -fx-border-insets: 0;
+    -fx-background-insets: 0;
+}
+
+.curve-shape {
+    -fx-background-color: white;
+    -fx-background-radius: 100 0 0 0;
+}
+
+.main-button {
+    -fx-background-color: #E60023;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-background-radius: 10;
+    -fx-padding: 10 20 10 20;
+    -fx-pref-height: 40;
+    -fx-pref-width: 300;
+}
+
+/* Main Container */
+.main-container {
+    -fx-max-width: 480px;
+    -fx-background-color: white;
+    -fx-background-radius: 30px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 0);
+}
+
+/* Header Section */
+.header-section {
+    -fx-min-height: 321px;
+    -fx-max-height: 321px;
+    -fx-pref-height: 321px;
+}
+
+.background-image {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0, 0, 2);
+}
+
+.header-content {
+    -fx-padding: 16 0 0 0;
+    -fx-spacing: 10;
+}
+
+/* Status Bar */
+.status-bar {
+    -fx-padding: 0 26.5 0 26.5;
+    -fx-alignment: center-left;
+    -fx-max-width: 327px;
+    -fx-pref-width: 327px;
+}
+
+.time-label {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: 600;
+    -fx-letter-spacing: -0.02em;
+}
+
+.status-icons {
+    -fx-spacing: 6;
+    -fx-alignment: center-right;
+}
+
+/* Title Section */
+.title-section {
+    -fx-padding: 48 80 96 80;
+    -fx-min-height: 219px;
+    -fx-alignment: center;
+}
+
+.title-label {
+    -fx-text-fill: white;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: -0.02em;
+    -fx-line-spacing: 8px;
+    -fx-text-alignment: center-left;
+}
+
+.back-button {
+    -fx-translate-x: -140;
+    -fx-translate-y: 0;
+}
+
+/* Form Section */
+.form-section {
+    -fx-padding: 10 10 112 10;
+    -fx-spacing: 0;
+    -fx-min-height: 589px;
+}
+
+/* Input Containers */
+.input-container {
+    -fx-padding: 0;
+}
+
+.input-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #D9D9D9 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 10;
+    -fx-font-size: 20px;
+    -fx-letter-spacing: -0.02em;
+    -fx-text-fill: black;
+    -fx-prompt-text-fill: #a3a3a3;
+    -fx-alignment: center-left;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+}
+
+.input-field:focused {
+    -fx-border-color: transparent transparent #D9D9D9 transparent;
+    -fx-background-color: transparent;
+    -fx-effect: none;
+}
+
+/* Password Field */
+.password-container {
+    -fx-alignment: center-left;
+    -fx-spacing: 40;
+    -fx-padding: 0, 10, 10, 10;
+    -fx-border-color: transparent transparent #D9D9D9 transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.password-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-font-size: 20px;
+    -fx-letter-spacing: -0.02em;
+    -fx-text-fill: black;
+    -fx-prompt-text-fill: #a3a3a3;
+    -fx-alignment: center-left;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+}
+
+.password-field:focused {
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+    -fx-effect: none;
+}
+
+.password-toggle {
+    -fx-cursor: hand;
+}
+
+/* Checkbox Section */
+.checkbox-container {
+    -fx-padding: 2;
+    -fx-spacing: 2;
+    -fx-alignment: center;
+}
+
+.checkbox-wrapper {
+    -fx-padding: 4;
+    -fx-alignment: center;
+}
+
+.notification-checkbox {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 2 4;
+    -fx-background-radius: 100px;
+}
+
+.notification-checkbox .box {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.notification-checkbox .mark {
+    -fx-background-color: transparent;
+}
+
+.checkbox-label {
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+    -fx-letter-spacing: -0.02em;
+    -fx-line-spacing: 4px;
+    -fx-text-alignment: left;
+    -fx-wrap-text: true;
+    -fx-padding: 0 0 0 10;
+}
+
+/* Create Account Button */
+.create-button {
+    -fx-background-color: #E60023;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: -0.02em;
+    -fx-padding: 8 32;
+    -fx-background-radius: 12px;
+    -fx-cursor: hand;
+    -fx-max-height: 40;
+    -fx-max-width: 300;
+    -fx-alignment: center;
+    -fx-border-color: transparent;
+}
+
+.create-button:hover {
+    -fx-background-color: #b91c1c;
+}
+
+.create-button:pressed {
+    -fx-background-color: #991b1b;
+}
+
+/* Responsive adjustments */
+.main-container {
+    -fx-max-width: 480px;
+    -fx-pref-width: 480px;
+}
+
+/* Additional styling for better visual consistency */
+.input-field:hover {
+    -fx-border-color: transparent transparent #D9D9D9 transparent;
+}
+
+.password-field:hover {
+    -fx-border-color: transparent;
+}
+
+/* Center the create button */
+.form-section .create-button {
+    -fx-alignment: center;
+}
+
+.back-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+    -fx-border-color: red; /* visible pour debug */
+}
+
+.back-button:hover {
+    -fx-opacity: 0.7;
+}
+
+.back-button:pressed {
+    -fx-translate-y: 2;
+    -fx-opacity: 0.5;
+}
+
+.top-container-tableau {
+    -fx-background-color: white; /* Couleur de fond */
+    -fx-background-radius: 25px 25px 0 0;
+    -fx-border-radius: 25px 25px 0 0;
+    -fx-padding: 0 20 0 20 ;
+}
+
+.app-time-tableau {
+    -fx-font-size: 16;
+    -fx-text-fill: black;
+}
+
+.anchorPane-connexion-tableau {
+    -fx-background-color: white;
+    -fx-background-radius: 25px 25px 0 0;
+    -fx-border-radius: 25px 25px 0 0;
+}
+
+.bottom-bar {
+    -fx-background-color: #FFEFEF; /* rose très pâle */
+    -fx-background-radius: 40;
+    -fx-padding: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0.1, 0, 2);
+}
+
+.nav-label {
+    -fx-text-fill: #000000;
+    -fx-font-weight: normal;
+    -fx-font-size: 12px;
+}
+
+.nav-label-active {
+    -fx-text-fill: #E60023;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+/* Pour la barre de navigation flottante */
+.clickable-zone:hover {
+    -fx-background-color: rgba(0,0,0,0.05);
+    -fx-background-radius: 12;
+}
+
+/* Pour le bouton de déconnexion */
+.logout-button {
+    -fx-background-radius: 15;
+    -fx-border-color: red;
+    -fx-border-radius: 15;
+    -fx-cursor: hand;
+}
+.logout-button:hover {
+    -fx-background-color: #ffe6e6;
+}
+
+#labelMoisActuel {
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+}
+
+.combo-box-popup .scroll-bar:vertical {
+    -fx-opacity: 0;
+    -fx-pref-width: 0;
+    -fx-max-width: 0;
+}
+
+.combo-box .list-cell:filled:selected,
+.combo-box .list-cell:filled:selected:hover {
+    -fx-background-color: lightgray;
+    -fx-text-fill: black;
+}
+
+.combo-box-popup .list-view .list-cell:selected {
+    -fx-background-color: lightgray;
+    -fx-text-fill: black;
+}
+
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: #d3d3d3; /* gris un peu plus foncé au survol */
+}

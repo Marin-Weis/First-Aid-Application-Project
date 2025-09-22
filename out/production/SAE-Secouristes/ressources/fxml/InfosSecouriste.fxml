@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="739.0" prefWidth="394.0" style="-fx-background-color: white;" styleClass="rounded-app" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InfosSecouristeController">
+   <children>
+      <BorderPane fx:id="mainBorderPane" prefHeight="852.0" prefWidth="393.0" style="-fx-background-color: transparent;">
+         <top>
+            <VBox prefWidth="393.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="44.0" prefWidth="393.0" spacing="3.0" styleClass="top-container">
+                     <children>
+                        <Label fx:id="timeLabel" styleClass="app-time" text="00:00" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <ImageView fitHeight="17" fitWidth="17" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/signal.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="20" fitWidth="20" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/wifi.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/batterie_pleine.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </top>
+         <center>
+            <ScrollPane fx:id="scrollPane" fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: white; -fx-padding: 0; -fx-border-insets: 0; -fx-background-insets: 0;" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
+               <content>
+                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="872.0" prefWidth="394.0" style="-fx-background-color: white;">
+                     <children>
+                        <VBox prefHeight="167.0" prefWidth="394.0" spacing="0" style="-fx-padding: 0;" styleClass="anchorPane-connexion-profil">
+                           <children>
+                              <Button fx:id="backButton" alignment="TOP_LEFT" onAction="#handleBack" prefHeight="40" prefWidth="40" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                                 <graphic>
+                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/fleche.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></Button>
+                              <StackPane alignment="CENTER">
+                                 <children>
+                                    <VBox alignment="CENTER">
+                                       <children>
+                                          <Label style="-fx-text-fill: white; -fx-font-size: 32px; -fx-font-family: SF Pro Display Bold; -fx-font-weight: bold;" text="Coordonnées" />
+                                          <Region prefHeight="5" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </StackPane>
+                              <StackPane alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="394.0" style="-fx-padding: 0; -fx-background-color: transparent;">
+                                 <children>
+                                    <ImageView fitHeight="117.0" fitWidth="117.0" pickOnBounds="false" preserveRatio="true" translateY="10.0">
+                                       <image>
+                                          <Image url="@../img/Marin.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="872.0" prefWidth="394.0" style="-fx-background-color: transparent;">
+                           <children>
+                              <GridPane prefHeight="741.0" prefWidth="394.0" style="-fx-background-color: transparent;">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="236.0" minHeight="10.0" prefHeight="127.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="331.0" minHeight="10.0" prefHeight="194.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="237.0" minHeight="10.0" prefHeight="191.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="100.0" prefWidth="394.0">
+                                       <children>
+                                          <Region prefHeight="55.0" prefWidth="394.0" />
+                                          <Label style="-fx-text-fill: black; -fx-font-size: 20;" text="Secouriste professionnel" />
+                                       </children>
+                                    </VBox>
+                                    <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="207.0" prefWidth="364.0" style="-fx-background-color: F6F6F9; -fx-background-radius: 30;" GridPane.rowIndex="1">
+                                       <effect>
+                                          <DropShadow color="#00000040" offsetX="0" offsetY="4" radius="10" />
+                                       </effect>
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <GridPane.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </GridPane.margin>
+                                       <children>
+                                          <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: transparent transparent transparent #E60023; -fx-border-width: 0 0 0 2;">
+                                             <children>
+                                                <Label style="-fx-text-fill: black; -fx-font-size: 20;" text="Nom :  ">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Region prefHeight="47.0" prefWidth="62.0" />
+                                                <TextField fx:id="nomField" text="Weis" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: transparent transparent transparent #E60023; -fx-border-width: 0 0 0 2;" GridPane.rowIndex="1">
+                                             <children>
+                                                <Label style="-fx-text-fill: black; -fx-font-size: 20;" text="Prénom : ">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Region prefHeight="47.0" prefWidth="38.0" />
+                                                <TextField fx:id="prenomField" prefHeight="26.0" prefWidth="169.0" text="Marin" />
+                                             </children>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="62.0" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: transparent transparent transparent #E60023; -fx-border-width: 0 0 0 2;" GridPane.rowIndex="2">
+                                             <children>
+                                                <Label style="-fx-text-fill: black; -fx-font-size: 20;" text="Adresse :  ">
+                                                   <padding>
+                                                      <Insets left="10.0" />
+                                                   </padding>
+                                                </Label>
+                                                <Region prefHeight="47.0" prefWidth="29.0" />
+                                                <TextField fx:id="adresseField" prefHeight="26.0" prefWidth="171.0" text="weis@gmail.com" />
+                                             </children>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="114.0" prefHeight="91.0" prefWidth="344.0" style="-fx-border-color: transparent transparent transparent #E60023; -fx-border-width: 0 0 0 2;" GridPane.rowIndex="3">
+                                             <children>
+                                                <Label style="-fx-text-fill: black; -fx-font-size: 20;" text="Téléphone :  ">
+                                                   <padding>
+                                                      <Insets left="10.0" />
+                                                   </padding>
+                                                </Label>
+                                                <Region prefHeight="46.0" prefWidth="7.0" />
+                                                <TextField fx:id="telephoneField" text="06 83 44 56 12" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </GridPane>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+                                       <children>
+                                          <Button onAction="#handleSaveProfil" style="-fx-max-height: 40; -fx-max-width: 230;" styleClass="create-button" text="Enregistrer" textAlignment="CENTER" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

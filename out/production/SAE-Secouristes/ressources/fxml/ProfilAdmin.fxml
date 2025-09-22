@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+
+<StackPane prefHeight="852.0" prefWidth="393.0" style="-fx-background-color: white;" styleClass="rounded-app" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProfilAdminController">
+    <clip>
+        <Rectangle arcHeight="50" arcWidth="50" height="852" width="393" />
+    </clip>
+
+    <!-- CONTENEUR PRINCIPAL -->
+    <BorderPane fx:id="mainBorderPane" prefHeight="852.0" prefWidth="393.0" style="-fx-background-color: white;">
+
+        <!-- TOP BARRE -->
+        <top>
+            <VBox prefWidth="393.0" BorderPane.alignment="CENTER">
+                <children>
+
+                    <!-- BARRE D'INFOS -->
+                    <HBox alignment="CENTER" prefHeight="44.0" prefWidth="393.0" spacing="3.0" styleClass="top-container">
+                        <children>
+                            <Label fx:id="timeLabel" styleClass="app-time" text="00:00" /> <!-- l'heure -->
+                            <Region HBox.hgrow="ALWAYS" /> <!-- Espace flexible -->
+
+                            <!-- les icônes de statut de l'application-->
+                            <ImageView fitHeight="17" fitWidth="17" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../img/signal.png" />
+                                </image>
+                            </ImageView>
+                            <ImageView fitHeight="20" fitWidth="20" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../img/wifi.png" />
+                                </image>
+                            </ImageView>
+                            <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../img/batterie_pleine.png" />
+                                </image>
+                            </ImageView>
+                        </children>
+                    </HBox>
+
+                </children>
+            </VBox>
+        </top>
+
+        <!-- CONTENU CENTRAL SCROLLABLE -->
+        <center>
+            <ScrollPane fx:id="scrollPane" fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: white; -fx-padding: 0; -fx-border-insets: 0; -fx-background-insets: 0;" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
+                <content>
+                    <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="872.0" prefWidth="394.0" style="-fx-background-color: white;">
+                        <children>
+                            <!-- Utilisation AnchorPane pour placer les éléments avec précisions -->
+                            <VBox prefHeight="167.0" prefWidth="394.0" spacing="0" style="-fx-padding: 0;" styleClass="anchorPane-connexion-profil">
+                                <Button fx:id="backButton" alignment="TOP_LEFT" onAction="#handleBack" prefHeight="40" prefWidth="40" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                                    <graphic>
+                                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../img/fleche.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+
+                                <StackPane alignment="CENTER">
+                                    <VBox alignment="CENTER">
+                                        <Label style="-fx-text-fill: white; -fx-font-size: 32px; -fx-font-family: SF Pro Display Bold; -fx-font-weight: bold;" text="Profil Administrateur" />
+                                        <Region prefHeight="5" />
+                                    </VBox>
+                                </StackPane>
+                                <StackPane alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="394.0" style="-fx-padding: 0; -fx-background-color: transparent;">
+                                    <ImageView fitHeight="117.0" fitWidth="117.0" pickOnBounds="false" preserveRatio="true" translateY="10.0">
+                                        <image>
+                                            <Image url="@../img/Administrateur.png" />
+                                        </image>
+                                    </ImageView>
+                                </StackPane>
+
+                            </VBox>
+                            <VBox prefHeight="872.0" prefWidth="394.0" style="-fx-background-color: transparent;">
+                                <children>
+                                    <GridPane prefHeight="708.0" prefWidth="390.0" style="-fx-background-color: transparent;">
+                                        <columnConstraints>
+                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        </columnConstraints>
+                                        <rowConstraints>
+                                            <RowConstraints maxHeight="236.0" minHeight="10.0" prefHeight="144.0" vgrow="SOMETIMES" />
+                                            <RowConstraints maxHeight="345.0" minHeight="10.0" prefHeight="179.0" vgrow="SOMETIMES" />
+                                            <RowConstraints maxHeight="352.0" minHeight="10.0" prefHeight="352.0" vgrow="SOMETIMES" />
+                                            <RowConstraints maxHeight="226.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                                        </rowConstraints>
+                                        <children>
+                                            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="394.0">
+                                                <children>
+                                                    <Region prefHeight="50.0" prefWidth="394.0" />
+                                                    <Label style="-fx-text-fill: black; -fx-font-size: 20;" text="Administrateur" />
+                                                </children>
+                                            </VBox>
+                                            <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="207.0" prefWidth="364.0" style="-fx-background-color: F6F6F9; -fx-background-radius: 30;" GridPane.rowIndex="1">
+                                                <effect>
+                                                    <DropShadow color="#00000040" offsetX="0" offsetY="4" radius="10" />
+                                                </effect>
+                                                <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                </columnConstraints>
+                                                <rowConstraints>
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                </rowConstraints>
+                                                <GridPane.margin>
+                                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                </GridPane.margin>
+                                                <children>
+                                                    <GridPane>
+                                                        <columnConstraints>
+                                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="326.0" minWidth="10.0" prefWidth="307.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="176.0" minWidth="10.0" prefWidth="57.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                        <children>
+                                                            <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: transparent transparent transparent #E60023; -fx-border-width: 0 0 0 2;">
+                                                                <children>
+                                                                    <Label style="-fx-text-fill: black; -fx-font-size: 20;" text="Nom :  ">
+                                                                        <HBox.margin>
+                                                                            <Insets left="10.0" />
+                                                                        </HBox.margin></Label>
+                                                                    <Label fx:id="nomField" layoutX="10.0" layoutY="10.0" style="-fx-text-fill: black; -fx-font-size: 20;" text="Weis" />
+                                                                </children>
+                                                            </HBox>
+                                                            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" />
+                                                        </children>
+                                                    </GridPane>
+                                                    <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: transparent transparent transparent #E60023; -fx-border-width: 0 0 0 2;" GridPane.rowIndex="1">
+                                                        <children>
+                                                            <Label style="-fx-text-fill: black; -fx-font-size: 20;" text="Prénom : ">
+                                                                <HBox.margin>
+                                                                    <Insets left="10.0" />
+                                                                </HBox.margin></Label>
+                                                            <Label fx:id="prenomField" layoutX="10.0" layoutY="10.0" style="-fx-text-fill: black; -fx-font-size: 20;" text="Marin" />
+                                                        </children>
+                                                    </HBox>
+                                                    <HBox layoutX="10.0" layoutY="62.0" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: transparent transparent transparent #E60023; -fx-border-width: 0 0 0 2;" GridPane.rowIndex="2">
+                                                        <children>
+                                             <ScrollPane fx:id="horizontalScrollPane" fitToHeight="true" hbarPolicy="NEVER" pannable="true" style="-fx-background-color: transparent; -fx-padding: 0; -fx-background-insets: 0; -fx-background-radius: 0; -fx-background: transparent;" vbarPolicy="NEVER">
+                                                <content>
+                                                   <HBox spacing="10.0">
+                                                      <padding>
+                                                         <Insets left="13.0" />
+                                                      </padding>
+                                                      <children>
+                                                                        <Label style="-fx-text-fill: black; -fx-font-size: 20;" text="Adresse :  " />
+                                                                        <Label fx:id="adresseField" style="-fx-text-fill: black; -fx-font-size: 20;" text="weis@gmail.com" />
+                                                      </children>
+                                                   </HBox>
+                                                </content>
+                                                <HBox.margin>
+                                                   <Insets />
+                                                </HBox.margin>
+                                             </ScrollPane>
+                                                        </children>
+                                                    </HBox>
+                                                    <HBox layoutX="10.0" layoutY="114.0" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: transparent transparent transparent #E60023; -fx-border-width: 0 0 0 2;" GridPane.rowIndex="3">
+                                                        <children>
+                                                            <Label style="-fx-text-fill: black; -fx-font-size: 20;" text="Téléphone :  ">
+                                                                <padding>
+                                                                    <Insets left="10.0" />
+                                                                </padding></Label>
+                                                            <Label fx:id="telephoneField" layoutX="10.0" layoutY="10.0" style="-fx-text-fill: black; -fx-font-size: 20;" text="06 58 41 22 64" />
+                                                        </children>
+                                                    </HBox>
+                                                </children>
+                                                <padding>
+                                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                </padding>
+                                            </GridPane>
+                                            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+                                                <children>
+                                                    <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="265.0" style="-fx-background-color: F6F6F9; -fx-background-radius: 30;">
+                                                        <effect>
+                                                            <DropShadow color="#00000040" offsetX="0" offsetY="4" radius="10" />
+                                                        </effect>
+                                                        <columnConstraints>
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                            <RowConstraints maxHeight="62.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
+                                             <RowConstraints maxHeight="96.0" minHeight="5.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                                             <RowConstraints maxHeight="164.0" minHeight="10.0" prefHeight="71.0" vgrow="SOMETIMES" />
+                                             <RowConstraints maxHeight="146.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                        <children>
+                                                            <GridPane GridPane.rowIndex="1">
+                                                                <columnConstraints>
+                                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                </columnConstraints>
+                                                                <rowConstraints>
+                                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                </rowConstraints>
+                                                                <children>
+                                                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                                                        <children>
+                                                                            <Label style="-fx-text-fill: black; -fx-font-size: 15;" text="Ce mois-ci">
+                                                                                <padding>
+                                                                                    <Insets top="10.0" />
+                                                                                </padding>
+                                                                            </Label>
+                                                                            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                                                <children>
+                                                                                    <Label style="-fx-text-fill: #E60023; -fx-font-size: 15;" text="14" />
+                                                                                    <Label layoutX="100.0" layoutY="16.0" style="-fx-text-fill: #E60023; -fx-font-size: 15;" text=" DPS" />
+                                                                                </children>
+                                                                            </HBox>
+                                                                        </children>
+                                                                    </VBox>
+                                                                    <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: transparent transparent transparent rgba(0, 0, 0, 0.21); -fx-border-width: 0 0 0 2;" GridPane.columnIndex="1">
+                                                                        <children>
+                                                                            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                                                                <children>
+                                                                                    <Label style="-fx-text-fill: black; -fx-font-size: 15;" text="Total">
+                                                                                        <padding>
+                                                                                            <Insets top="10.0" />
+                                                                                        </padding>
+                                                                                    </Label>
+                                                                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                                                        <children>
+                                                                                            <Label style="-fx-text-fill: #E60023; -fx-font-size: 15;" text="305" />
+                                                                                            <Label layoutX="100.0" layoutY="16.0" style="-fx-text-fill: #E60023; -fx-font-size: 15;" text=" DPS" />
+                                                                                        </children>
+                                                                                    </HBox>
+                                                                                </children>
+                                                                            </VBox>
+                                                                        </children>
+                                                                    </VBox>
+                                                                </children>
+                                                            </GridPane>
+                                                            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                                                                <children>
+                                                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                                      <children>
+                                                                          <Label style="-fx-text-fill: black; -fx-font-size: 20;" text="Statistiques" />
+                                                         <Label style="-fx-text-fill: black; -fx-font-size: 14;" text="DPS créer" />
+                                                      </children>
+                                                   </VBox>
+                                                                </children>
+                                                            </VBox>
+                                             <GridPane layoutX="10.0" layoutY="42.0" GridPane.rowIndex="3">
+                                                <columnConstraints>
+                                                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                </columnConstraints>
+                                                <rowConstraints>
+                                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                </rowConstraints>
+                                                <children>
+                                                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                                      <children>
+                                                         <Label style="-fx-text-fill: black; -fx-font-size: 15;" text="Ce mois-ci">
+                                                            <padding>
+                                                               <Insets top="10.0" />
+                                                            </padding>
+                                                         </Label>
+                                                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                            <children>
+                                                               <Label style="-fx-text-fill: #E60023; -fx-font-size: 15;" text="14" />
+                                                               <Label layoutX="100.0" layoutY="16.0" style="-fx-text-fill: #E60023; -fx-font-size: 15;" text=" DPS" />
+                                                            </children>
+                                                         </HBox>
+                                                      </children>
+                                                   </VBox>
+                                                   <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: transparent transparent transparent rgba(0, 0, 0, 0.21); -fx-border-width: 0 0 0 2;" GridPane.columnIndex="1">
+                                                      <children>
+                                                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                                            <children>
+                                                               <Label style="-fx-text-fill: black; -fx-font-size: 15;" text="Total">
+                                                                  <padding>
+                                                                     <Insets top="10.0" />
+                                                                  </padding>
+                                                               </Label>
+                                                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                                  <children>
+                                                                     <Label style="-fx-text-fill: #E60023; -fx-font-size: 15;" text="305" />
+                                                                     <Label layoutX="100.0" layoutY="16.0" style="-fx-text-fill: #E60023; -fx-font-size: 15;" text=" DPS" />
+                                                                  </children>
+                                                               </HBox>
+                                                            </children>
+                                                         </VBox>
+                                                      </children>
+                                                   </VBox>
+                                                </children>
+                                             </GridPane>
+                                             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+                                                <children>
+                                                   <Label style="-fx-text-fill: black; -fx-font-size: 14;" text="Secouriste en charge">
+                                                      <padding>
+                                                         <Insets top="10.0" />
+                                                      </padding>
+                                                   </Label>
+                                                </children>
+                                             </VBox>
+                                                        </children>
+                                                    </GridPane>
+                                                </children>
+                                            </VBox>
+                                            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
+                                                <children>
+                                                    <Button onAction="#handleDeconnexion" style="-fx-max-height: 40; -fx-max-width: 230;" styleClass="create-button" text="Se déconnecter" textAlignment="CENTER" />
+                                                </children>
+                                    <GridPane.margin>
+                                       <Insets top="-30.0" />
+                                    </GridPane.margin></VBox>
+                                        </children>
+                                    </GridPane>
+                                </children>
+                            </VBox>
+
+                        </children>
+                    </VBox>
+                </content>
+            </ScrollPane>
+        </center>
+    </BorderPane>
+
+</StackPane>

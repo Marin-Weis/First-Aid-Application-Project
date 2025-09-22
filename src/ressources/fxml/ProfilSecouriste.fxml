@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+
+<StackPane prefHeight="852.0" prefWidth="393.0" style="-fx-background-color: white;" styleClass="rounded-app" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProfilSecouristeController">
+    <!--
+<clip>
+    <Rectangle arcHeight="50" arcWidth="50" height="852" width="393" />
+</clip>
+-->
+
+    <!-- CONTENEUR PRINCIPAL -->
+    <BorderPane fx:id="mainBorderPane" prefHeight="852.0" prefWidth="393.0" style="-fx-background-color: transparent;">
+
+        <!-- TOP BARRE -->
+        <top>
+            <VBox prefWidth="393.0" BorderPane.alignment="CENTER">
+                <children>
+
+                    <!-- BARRE D'INFOS -->
+                    <HBox alignment="CENTER" prefHeight="44.0" prefWidth="393.0" spacing="3.0" styleClass="top-container">
+                        <children>
+                            <Label fx:id="timeLabel" styleClass="app-time" text="00:00" /> <!-- l'heure -->
+                            <Region HBox.hgrow="ALWAYS" /> <!-- Espace flexible -->
+
+                            <!-- les icônes de statut de l'application-->
+                            <ImageView fitHeight="17" fitWidth="17" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../img/signal.png" />
+                                </image>
+                            </ImageView>
+                            <ImageView fitHeight="20" fitWidth="20" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../img/wifi.png" />
+                                </image>
+                            </ImageView>
+                            <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../img/batterie_pleine.png" />
+                                </image>
+                            </ImageView>
+                        </children>
+                    </HBox>
+
+                </children>
+            </VBox>
+        </top>
+
+        <!-- CONTENU CENTRAL SCROLLABLE -->
+        <center>
+            <ScrollPane fx:id="scrollPane" fitToWidth="true" hbarPolicy="NEVER" prefWidth="394.0" style="-fx-background-color: white; -fx-padding: 0; -fx-border-insets: 0; -fx-background-insets: 0;" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
+                <content>
+                    <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="872.0" prefWidth="394.0" style="-fx-background-color: white;">
+                        <children>
+                            <!-- Utilisation AnchorPane pour placer les éléments avec précisions -->
+                            <VBox prefHeight="167.0" prefWidth="394.0" spacing="0" style="-fx-padding: 0;" styleClass="anchorPane-connexion-profil">
+                                <Button fx:id="backButton" alignment="TOP_LEFT" onAction="#handleBack" prefHeight="40" prefWidth="40" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                                    <graphic>
+                                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../img/fleche.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+
+                                <StackPane alignment="CENTER">
+                                    <VBox alignment="CENTER">
+                                        <Label style="-fx-text-fill: white; -fx-font-size: 32px; -fx-font-family: SF Pro Display Bold; -fx-font-weight: bold;" text="Profil Secouriste" />
+                                        <Region prefHeight="5" />
+                                    </VBox>
+                                </StackPane>
+                                <StackPane alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="394.0" style="-fx-padding: 0; -fx-background-color: transparent;">
+                                    <ImageView fitHeight="117.0" fitWidth="117.0" pickOnBounds="false" preserveRatio="true" translateY="10.0">
+                                        <image>
+                                            <Image url="@../img/Marin.png" />
+                                        </image>
+                                    </ImageView>
+                                </StackPane>
+
+                            </VBox>
+                            <VBox prefHeight="872.0" prefWidth="394.0" style="-fx-background-color: transparent;">
+                                <children>
+                                    <GridPane prefHeight="741.0" prefWidth="394.0" style="-fx-background-color: transparent;">
+                                        <columnConstraints>
+                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        </columnConstraints>
+                                        <rowConstraints>
+                                            <RowConstraints maxHeight="236.0" minHeight="10.0" prefHeight="127.0" vgrow="SOMETIMES" />
+                                            <RowConstraints maxHeight="331.0" minHeight="10.0" prefHeight="169.0" vgrow="SOMETIMES" />
+                                            <RowConstraints maxHeight="237.0" minHeight="10.0" prefHeight="198.0" vgrow="SOMETIMES" />
+                                            <RowConstraints maxHeight="210.0" minHeight="10.0" prefHeight="102.0" vgrow="SOMETIMES" />
+                                            <RowConstraints maxHeight="137.0" minHeight="10.0" prefHeight="90.0" vgrow="SOMETIMES" />
+                                 <RowConstraints maxHeight="100.0" minHeight="9.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                                        </rowConstraints>
+                                        <children>
+                                            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="394.0">
+                                                <children>
+                                                    <Region prefHeight="50.0" prefWidth="394.0" />
+                                                    <Label style="-fx-text-fill: black; -fx-font-size: 20;" text="Secouriste professionnel" />
+                                                </children>
+                                            </VBox>
+                                            <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="207.0" prefWidth="364.0" style="-fx-background-color: F6F6F9; -fx-background-radius: 30;" GridPane.rowIndex="1">
+                                                <effect>
+                                                    <DropShadow color="#00000040" offsetX="0" offsetY="4" radius="10" />
+                                                </effect>
+                                                <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                </columnConstraints>
+                                                <rowConstraints>
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                </rowConstraints>
+                                                <GridPane.margin>
+                                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                </GridPane.margin>
+                                                <children>
+                                                    <GridPane>
+                                                        <columnConstraints>
+                                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="326.0" minWidth="10.0" prefWidth="307.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="176.0" minWidth="10.0" prefWidth="57.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                        <children>
+                                                            <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: transparent transparent transparent #E60023; -fx-border-width: 0 0 0 2;">
+                                                                <children>
+                                                                    <Label style="-fx-text-fill: black; -fx-font-size: 20;" text="Nom :  ">
+                                                                        <HBox.margin>
+                                                                            <Insets left="10.0" />
+                                                                        </HBox.margin></Label>
+                                                                    <Label fx:id="nomField" layoutX="10.0" layoutY="10.0" style="-fx-text-fill: black; -fx-font-size: 20;" text="Weis" />
+                                                                </children>
+                                                            </HBox>
+                                                            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                                                                <children>
+                                                                    <Button fx:id="editButton" mnemonicParsing="false" onAction="#handleEditInfos" prefHeight="33.0" prefWidth="20.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Button">
+                                                                        <graphic>
+                                                                            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                                                <image>
+                                                                                    <Image url="@../img/edit_profil.png" />
+                                                                                </image>
+                                                                            </ImageView>
+                                                                        </graphic>
+                                                                    </Button>
+                                                                </children>
+                                                            </VBox>
+                                                        </children>
+                                                    </GridPane>
+                                                    <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: transparent transparent transparent #E60023; -fx-border-width: 0 0 0 2;" GridPane.rowIndex="1">
+                                                        <children>
+                                                            <Label style="-fx-text-fill: black; -fx-font-size: 20;" text="Prénom : ">
+                                                                <HBox.margin>
+                                                                    <Insets left="10.0" />
+                                                                </HBox.margin></Label>
+                                                            <Label fx:id="prenomField" layoutX="10.0" layoutY="10.0" style="-fx-text-fill: black; -fx-font-size: 20;" text="Marin" />
+                                                        </children>
+                                                    </HBox>
+                                                    <HBox layoutX="10.0" layoutY="62.0" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: transparent transparent transparent #E60023; -fx-border-width: 0 0 0 2;" GridPane.rowIndex="2">
+                                                        <children>
+                                                            <Label style="-fx-text-fill: black; -fx-font-size: 20;" text="Adresse :  ">
+                                                                <padding>
+                                                                    <Insets left="10.0" />
+                                                                </padding></Label>
+                                                            <Label fx:id="adresseField" layoutX="10.0" layoutY="10.0" style="-fx-text-fill: black; -fx-font-size: 20;" text="weis@gmail.com" />
+                                                        </children>
+                                                    </HBox>
+                                                    <HBox layoutX="10.0" layoutY="114.0" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: transparent transparent transparent #E60023; -fx-border-width: 0 0 0 2;" GridPane.rowIndex="3">
+                                                        <children>
+                                                            <Label style="-fx-text-fill: black; -fx-font-size: 20;" text="Téléphone :  ">
+                                                                <padding>
+                                                                    <Insets left="10.0" />
+                                                                </padding></Label>
+                                                            <Label fx:id="telephoneField" layoutX="10.0" layoutY="10.0" style="-fx-text-fill: black; -fx-font-size: 20;" text="06 58 41 22 64" />
+                                                        </children>
+                                                    </HBox>
+                                                </children>
+                                                <padding>
+                                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                </padding>
+                                            </GridPane>
+                                            <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="128.0" prefWidth="394.0" style="-fx-background-color: F6F6F9; -fx-background-radius: 30;" GridPane.rowIndex="2">
+                                                <effect>
+                                                    <DropShadow color="#00000040" offsetX="0" offsetY="4" radius="10" />
+                                                </effect>
+                                                <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                </columnConstraints>
+                                                <rowConstraints>
+                                                    <RowConstraints maxHeight="58.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints maxHeight="95.0" minHeight="10.0" prefHeight="92.0" vgrow="SOMETIMES" />
+                                                </rowConstraints>
+                                                <children>
+                                                    <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: transparent;">
+                                                        <children>
+                                                            <GridPane>
+                                                                <columnConstraints>
+                                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="364.0" minWidth="10.0" prefWidth="343.0" />
+                                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="191.0" minWidth="10.0" prefWidth="51.0" />
+                                                                </columnConstraints>
+                                                                <rowConstraints>
+                                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                </rowConstraints>
+                                                                <children>
+                                                                    <Button mnemonicParsing="false" onAction="#showPopup" prefHeight="32.0" prefWidth="71.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Button" GridPane.columnIndex="1">
+                                                                        <graphic>
+                                                                            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                                                <image>
+                                                                                    <Image url="@../img/edit_profil.png" />
+                                                                                </image>
+                                                                            </ImageView>
+                                                                        </graphic>
+                                                                    </Button>
+                                                                    <VBox alignment="CENTER" prefHeight="30.0" prefWidth="335.0">
+                                                                        <children>
+                                                                            <Label style="-fx-text-fill: black; -fx-font-size: 20;" text="Compétences">
+                                                                                <padding>
+                                                                                    <Insets left="50.0" />
+                                                                                </padding>
+                                                                            </Label>
+                                                                        </children>
+                                                                    </VBox>
+                                                                </children>
+                                                            </GridPane>
+                                                        </children>
+                                                    </VBox>
+                                                    <ScrollPane fx:id="horizontalScrollPane" fitToHeight="true" hbarPolicy="NEVER" pannable="true" prefHeight="84" prefWidth="373" style="-fx-background-color: transparent; -fx-padding: 0; -fx-background-insets: 0; -fx-background-radius: 0; -fx-background: transparent;" vbarPolicy="NEVER" GridPane.rowIndex="1">
+                                                        <content>
+                                                            <HBox fx:id="competenceContainer" spacing="10.0">
+                                                                <padding>
+                                                                    <Insets bottom="20" left="20" right="20" top="20" />
+                                                                </padding>
+                                                                <children>
+                                                                </children>
+                                                            </HBox>
+                                                        </content>
+                                                    </ScrollPane>
+                                                </children>
+                                            </GridPane>
+                                            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
+                                                <children>
+                                                    <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="136.0" prefWidth="285.0" style="-fx-background-color: F6F6F9; -fx-background-radius: 30;">
+                                                        <effect>
+                                                            <DropShadow color="#00000040" offsetX="0" offsetY="4" radius="10" />
+                                                        </effect>
+                                                        <columnConstraints>
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                            <RowConstraints maxHeight="62.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="96.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                        <children>
+                                                            <GridPane GridPane.rowIndex="1">
+                                                                <columnConstraints>
+                                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                </columnConstraints>
+                                                                <rowConstraints>
+                                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                </rowConstraints>
+                                                                <children>
+                                                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                                                        <children>
+                                                                            <Label style="-fx-text-fill: black; -fx-font-size: 15;" text="Ce mois-ci">
+                                                                                <padding>
+                                                                                    <Insets top="10.0" />
+                                                                                </padding>
+                                                                            </Label>
+                                                                            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                                                <children>
+                                                                                    <Label style="-fx-text-fill: #E60023; -fx-font-size: 15;" text="14" />
+                                                                                    <Label layoutX="100.0" layoutY="16.0" style="-fx-text-fill: #E60023; -fx-font-size: 15;" text=" DPS" />
+                                                                                </children>
+                                                                            </HBox>
+                                                                        </children>
+                                                                    </VBox>
+                                                                    <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: transparent transparent transparent rgba(0, 0, 0, 0.21); -fx-border-width: 0 0 0 2;" GridPane.columnIndex="1">
+                                                                        <children>
+                                                                            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                                                                <children>
+                                                                                    <Label style="-fx-text-fill: black; -fx-font-size: 15;" text="Total">
+                                                                                        <padding>
+                                                                                            <Insets top="10.0" />
+                                                                                        </padding>
+                                                                                    </Label>
+                                                                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                                                        <children>
+                                                                                            <Label style="-fx-text-fill: #E60023; -fx-font-size: 15;" text="305" />
+                                                                                            <Label layoutX="100.0" layoutY="16.0" style="-fx-text-fill: #E60023; -fx-font-size: 15;" text=" DPS" />
+                                                                                        </children>
+                                                                                    </HBox>
+                                                                                </children>
+                                                                            </VBox>
+                                                                        </children>
+                                                                    </VBox>
+                                                                </children>
+                                                            </GridPane>
+                                                            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                                                                <children>
+                                                                    <Label style="-fx-text-fill: black; -fx-font-size: 20;" text="Statistiques" />
+                                                                </children>
+                                                            </VBox>
+                                                        </children>
+                                                    </GridPane>
+                                                </children>
+                                            </VBox>
+                                            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="4">
+                                                <children>
+                                                    <Button onAction="#handleDeconnexion" style="-fx-max-height: 40; -fx-max-width: 230;" styleClass="create-button" text="Se déconnecter" textAlignment="CENTER" />
+                                                </children></VBox>
+                                 <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="5">
+                                    <children>
+                                       <Button fx:id="deleteAccountButton" maxHeight="68.0" maxWidth="289.0" minWidth="-Infinity" onAction="#handleDeleteAccount" prefHeight="68.0" prefWidth="289.0" style="-fx-max-height: 40; -fx-max-width: 230;" styleClass="create-button" text="Supprimer mon compte " textAlignment="CENTER" />
+                                    </children>
+                                 </VBox>
+                                        </children>
+                                    </GridPane>
+                                </children>
+                            </VBox>
+
+                        </children>
+                    </VBox>
+                </content>
+            </ScrollPane>
+        </center>
+    </BorderPane>
+    <Rectangle fx:id="overlay" fill="rgba(0,0,0,0.4)" height="852" visible="false" width="394.0" />
+
+    <VBox fx:id="popupPane" alignment="CENTER" maxHeight="401.0" maxWidth="394.0" prefHeight="380.0" prefWidth="394.0" spacing="10" style="-fx-background-color: white;              -fx-background-radius: 10;              -fx-border-color: #333333;              -fx-border-radius: 10;              -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 10, 0, 0, 5);" visible="false" StackPane.alignment="BOTTOM_CENTER" VBox.vgrow="NEVER">
+        <children>
+            <GridPane prefHeight="380.0" prefWidth="393.0">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints maxHeight="62.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="172.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="204.0" minHeight="10.0" prefHeight="198.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="122.0" minHeight="10.0" prefHeight="102.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+                <children>
+                    <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="392.0" style="-fx-border-color: transparent transparent rgba(136, 136, 136, 0.21) transparent; -fx-border-width: 0 0 2 0;">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="344.0" minWidth="10.0" prefWidth="342.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="190.0" minWidth="10.0" prefWidth="50.0" />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        </rowConstraints>
+                        <children>
+                            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                <children>
+                                    <Label prefHeight="35.0" prefWidth="322.0" style="-fx-text-fill: #E60023; -fx-font-size: 24;" text="Modifier compétences" />
+                                </children>
+                            </VBox>
+                            <VBox alignment="CENTER" onMouseClicked="#hidePopup" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                                <children>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../img/croix.png" />
+                                        </image>
+                                    </ImageView>
+                                </children>
+                            </VBox>
+                        </children>
+                    </GridPane>
+                    <HBox prefHeight="61.0" prefWidth="392.0" GridPane.rowIndex="1">
+                        <children>
+                            <Label fx:id="titrePopupLabel" style="-fx-text-fill: black; -fx-font-size: 16;" text="Sélectionner les compétences pour Marin" wrapText="true" />
+                        </children>
+                        <padding>
+                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                        </padding>
+                    </HBox>
+                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+                        <children>
+                            <Button onAction="#handleValiderCompetences" style="-fx-max-height: 40; -fx-max-width: 230;" styleClass="create-button" text="Valider" textAlignment="CENTER" />
+                        </children>
+                    </HBox>
+                    <GridPane alignment="CENTER" GridPane.rowIndex="2">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        </rowConstraints>
+                        <children>
+                            <HBox alignment="CENTER" spacing="10" styleClass="checkbox-container">
+                                <children>
+                                    <CheckBox fx:id="customCheckbox" styleClass="notification-checkbox">
+                                        <graphic>
+                                            <ImageView fx:id="checkboxImage" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                <image>
+                                                    <Image url="@../img/case_coche.png" />
+                                                </image>
+                                            </ImageView>
+                                        </graphic>
+                                    </CheckBox>
+                                    <Label styleClass="checkbox-label" text="CO" wrapText="true" HBox.hgrow="ALWAYS" />
+                                </children>
+                            </HBox>
+                            <HBox alignment="CENTER" spacing="10" styleClass="checkbox-container" GridPane.columnIndex="1">
+                                <children>
+                                    <CheckBox fx:id="customCheckbox1" styleClass="notification-checkbox">
+                                        <graphic>
+                                            <ImageView fx:id="checkboxImage1" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                <image>
+                                                    <Image url="@../img/case_coche.png" />
+                                                </image>
+                                            </ImageView>
+                                        </graphic>
+                                    </CheckBox>
+                                    <Label styleClass="checkbox-label" text="CP" wrapText="true" HBox.hgrow="ALWAYS" />
+                                </children>
+                            </HBox>
+                            <HBox alignment="CENTER" spacing="10" styleClass="checkbox-container" GridPane.columnIndex="2">
+                                <children>
+                                    <CheckBox fx:id="customCheckbox2" styleClass="notification-checkbox">
+                                        <graphic>
+                                            <ImageView fx:id="checkboxImage2" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                <image>
+                                                    <Image url="@../img/case_coche.png" />
+                                                </image>
+                                            </ImageView>
+                                        </graphic>
+                                    </CheckBox>
+                                    <Label styleClass="checkbox-label" text="CE" wrapText="true" HBox.hgrow="ALWAYS" />
+                                </children>
+                            </HBox>
+                            <HBox alignment="CENTER" spacing="10" styleClass="checkbox-container" GridPane.rowIndex="1">
+                                <children>
+                                    <CheckBox fx:id="customCheckbox3" styleClass="notification-checkbox">
+                                        <graphic>
+                                            <ImageView fx:id="checkboxImage3" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                <image>
+                                                    <Image url="@../img/case_coche.png" />
+                                                </image>
+                                            </ImageView>
+                                        </graphic>
+                                    </CheckBox>
+                                    <Label styleClass="checkbox-label" text="PBC" wrapText="true" HBox.hgrow="ALWAYS" />
+                                </children>
+                            </HBox>
+                            <HBox alignment="CENTER" spacing="10" styleClass="checkbox-container" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                <children>
+                                    <CheckBox fx:id="customCheckbox4" styleClass="notification-checkbox">
+                                        <graphic>
+                                            <ImageView fx:id="checkboxImage4" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                <image>
+                                                    <Image url="@../img/case_coche.png" />
+                                                </image>
+                                            </ImageView>
+                                        </graphic>
+                                    </CheckBox>
+                                    <Label styleClass="checkbox-label" text="PBF" wrapText="true" HBox.hgrow="ALWAYS" />
+                                </children>
+                            </HBox>
+                            <HBox alignment="CENTER" spacing="10" styleClass="checkbox-container" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                <children>
+                                    <CheckBox fx:id="customCheckbox5" styleClass="notification-checkbox">
+                                        <graphic>
+                                            <ImageView fx:id="checkboxImage5" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                <image>
+                                                    <Image url="@../img/case_coche.png" />
+                                                </image>
+                                            </ImageView>
+                                        </graphic>
+                                    </CheckBox>
+                                    <Label styleClass="checkbox-label" text="PSE1" wrapText="true" HBox.hgrow="ALWAYS" />
+                                </children>
+                            </HBox>
+                            <HBox alignment="CENTER" spacing="10" styleClass="checkbox-container" GridPane.rowIndex="2">
+                                <children>
+                                    <CheckBox fx:id="customCheckbox6" styleClass="notification-checkbox">
+                                        <graphic>
+                                            <ImageView fx:id="checkboxImage6" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                <image>
+                                                    <Image url="@../img/case_coche.png" />
+                                                </image>
+                                            </ImageView>
+                                        </graphic>
+                                    </CheckBox>
+                                    <Label styleClass="checkbox-label" text="PSE2" wrapText="true" HBox.hgrow="ALWAYS" />
+                                </children>
+                            </HBox>
+                            <HBox alignment="CENTER" spacing="10" styleClass="checkbox-container" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                <children>
+                                    <CheckBox fx:id="customCheckbox7" styleClass="notification-checkbox">
+                                        <graphic>
+                                            <ImageView fx:id="checkboxImage7" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                <image>
+                                                    <Image url="@../img/case_coche.png" />
+                                                </image>
+                                            </ImageView>
+                                        </graphic>
+                                    </CheckBox>
+                                    <Label styleClass="checkbox-label" text="SSA" wrapText="true" HBox.hgrow="ALWAYS" />
+                                </children>
+                            </HBox>
+                            <HBox alignment="CENTER" spacing="10" styleClass="checkbox-container" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                <children>
+                                    <CheckBox fx:id="customCheckbox8" styleClass="notification-checkbox">
+                                        <graphic>
+                                            <ImageView fx:id="checkboxImage8" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                <image>
+                                                    <Image url="@../img/case_coche.png" />
+                                                </image>
+                                            </ImageView>
+                                        </graphic>
+                                    </CheckBox>
+                                    <Label styleClass="checkbox-label" text="VPSP" wrapText="true" HBox.hgrow="ALWAYS" />
+                                </children>
+                            </HBox>
+                        </children>
+                    </GridPane>
+                </children>
+            </GridPane>
+        </children>
+    </VBox>
+</StackPane>
